@@ -1,0 +1,68 @@
+/* ===============================
+   Part 1: Pure CSS Animations
+   =============================== */
+
+/* Button hover transition */
+.fancy-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fancy-btn:hover {
+  transform: scale(1.2);
+  background-color: #45a049;
+}
+
+/* Animated box */
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: steelblue;
+  margin: 20px auto;
+  transition: transform 1s ease;
+}
+
+/* Animation triggered by JS */
+.box.animate {
+  transform: translateX(200px) rotate(45deg);
+}
+
+/* ===============================
+   Popup animation using keyframes
+   =============================== */
+.popup {
+  width: 250px;
+  background: #222;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  position: fixed;
+  top: -200px; /* hidden off-screen */
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Slide + fade in */
+.popup.show {
+  animation: slideFadeIn 0.6s forwards;
+}
+
+/* Slide + fade out */
+.popup.hide {
+  animation: slideFadeOut 0.6s forwards;
+}
+
+@keyframes slideFadeIn {
+  from { top: -200px; opacity: 0; }
+  to { top: 50px; opacity: 1; }
+}
+
+@keyframes slideFadeOut {
+  from { top: 50px; opacity: 1; }
+  to { top: -200px; opacity: 0; }
+}
